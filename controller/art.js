@@ -1,5 +1,5 @@
 var axios = require("axios");
-var search = "Van Gogh";
+var search = "david allan";
 // Calling images and art information from The Met
 
 function Art(search) {
@@ -7,6 +7,7 @@ function Art(search) {
     "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=" +
     search;
   axios.get(query).then(function(response) {
+    // console.log(response.data.objectIDs);
     var artArr = response.data.objectIDs;
     var imgArr = [];
     var callCount = 0;
@@ -26,4 +27,3 @@ function Art(search) {
 }
 
 module.exports = Art(search);
-
