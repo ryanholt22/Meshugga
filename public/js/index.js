@@ -1,72 +1,66 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+const exampleTextEl = document.getElementById("example-text");
+const exampleDescriptionEl = document.getElementById("example-description");
+const submitBtnEl = document.getElementById("submit");
+const exampleListEl = document.getElementById("example-list");
 
 // The API object contains methods for each kind of request we'll make
-var API = {
+const API = {
   saveExample: function(example) {
-    return $.ajax({
+    return fetch("/api/examples", {
       headers: {
         "Content-Type": "application/json"
       },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
+      method: "POST",
+      body: JSON.stringify(example)
+    }).then(res => res.json());
   },
   getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
+    return fetch("/api/examples").then(res => res.json());
   },
   deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
+    return fetch("/api/examples/" + id,{
+      method: "DELETE"
+    }).then(res => res.json);
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
+const refreshExamples = function() {
   API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+    const exampleEls = data.map(function(example) {
+      const aEl = document.createElement("a")
+      aEl.innerHTML = example.text;
+      aEl.setAttribute("href", "/example/" + example.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
+      const liEl = document.createElement("li")
+      liEl.classList.add("list-group-item")
+      liEl.setAttribute("data-id", example.id)
+      liEl.append(aEl);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+      const buttonEl = document.createElement("button")
+      buttonEl.classList.add("btn","btn-danger", "float-right", "delete")
+      buttonEl.innerHTML = "ｘ";
+      buttonEl.addEventListener("click", handleDeleteBtnClick);
 
-      $li.append($button);
+      liEl.append(buttonEl);
 
-      return $li;
+      return liEl;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    exampleListEl.innerHTML = "";
+    exampleListEl.append(...exampleEls);
   });
 };
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+const handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  const example = {
+    text: exampleTextEl.value.trim(),
+    description: exampleDescriptionEl.value.trim()
   };
 
   if (!(example.text && example.description)) {
@@ -78,22 +72,22 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  exampleTextEl.value = "";
+  exampleDescriptionEl.value = "";
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
+const handleDeleteBtnClick = function(event) {
+  const idToDelete = event.target.parentElement.getAttribute("data-id");
+  debugger
   API.deleteExample(idToDelete).then(function() {
     refreshExamples();
   });
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+submitBtnEl.addEventListener("click", handleFormSubmit);
+document.querySelectorAll(".delete").forEach(btn => {
+  btn.addEventListener("click", handleDeleteBtnClick)
+})
