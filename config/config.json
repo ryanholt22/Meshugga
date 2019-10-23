@@ -1,15 +1,10 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "9tachyons",
-    "database": "Meshugga",
-=======
-    "password": "root",
-    "database": "exampledb",
->>>>>>> 9f02f41b512492d8f9ff525eeefd785f5c592a86
+    "database": "Meshugga1",
     "host": "localhost",
-    "port": "8889",
+    "port": "3306",
     "dialect": "mysql"
   },
   "test": {
