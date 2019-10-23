@@ -90,4 +90,4 @@ const handleDeleteBtnClick = function(event) {
 submitBtnEl.addEventListener("click", handleFormSubmit);
 document.querySelectorAll(".delete").forEach(btn => {
   btn.addEventListener("click", handleDeleteBtnClick)
-})
+});
