@@ -1,33 +1,67 @@
 <div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#"><u><i>Suggested Artist1</i></u></a>
+    <a class="navbar-brand" href="#"><u><i>Suggested Artist2</i></u></a>
+    <a class="navbar-brand" href="#"><u><i>Suggested Artist3</i></u></a>
+    <a class="navbar-brand" href="#"><u><i>Suggested Artist4</i></u></a>
+    <a class="navbar-brand" href="#"><u><i>Suggested Artist5</i></u></a>
+    <a class="navbar-brand" href="#"><u><i>Suggested Artist6</i></u></a>
+  </nav>
+  <button type="button" id="search-artist-button" class="btn btn-primarySearchbutton"></button>
+  <input class="form-control" type="text" placeholder="Search for artist" aria-label="Search">
+  <div class="jumbotron" id="header">
+    <h1 class="display-4">Welcome to Meshugga!</h1>
+    <p class="lead">Upload some art or search a specific artist to get started!</p>
   </div>
+  <br>
+
+
+  <!-- Slideshow container -->
+<div class="slideshow-container">
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext1">
+    <img src="https:www.worldatlas.comrw728-h425-c728x425upload1fe7fd1280px-van-gogh-starry-night-google-art-project.jpg" width="100%" height="400px">
+    <div class="text" style="color red; font-size150%;">OIL</div>
+  <div>
+  <div class="mySlides fade">
+    <div class="numbertext2">
+    <img src="https:s3.amazonaws.comcom.twilio.prod.twilio-docsimagesASCII-ukiyowaves2048-gray.width-808.png" width="100%" height="400px">
+    <div class="text" style="color red; font-size150%;">ASCII</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext3">
+    <img src="http:www.cartoondistrict.comwp-contentuploads201703different-types-of-paintings-and-techniques-830x450.jpg" width="100%" height="400px"></div>
+    <div class="text" style="color red; font-size150%;">SPLASH</div>
+  </div>
+
+  </div>
+<br>
+<!-- The dots/circles -->
+<div style="text-aligncenter">
+  <span class="circle" onclick="currentSlide(1)"></span>
+  <span class="circle" onclick="currentSlide(2)"></span>
+  <span class="circle" onclick="currentSlide(3)"></span>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+
+</div>
+<div class="container">
+<h3>Getting started!</h3>
+<h5>To get started, paste a URL below to upload art, or search for an artist at the top of the page.</h5>
+<div id="postone" class="shadow-lg p-3 mb-5 bg-white rounded">
+  <form action="myform.cgi"> 
+    <input type="text" name="fileupload" value= id="fileupload"> Enter a URL to upload art!</form>
+    <label for="fileuploadlabel"></label>
+    </button id="submit" class="btn btn-success float-right">Submit</button>
+    </form>
+</div>
+<ul id="example-list" class="list-group">
+  {{#each examples}}
+  <li data-id={{this.id}} class="list-group-item">
+    <a href="example"{{this.id}}{{this.text}}></a>
+    <button class="btn btn-danger float-right deleteｘ"></button>
+  <li>
+  {{/each}}
+</ul>
+</div>
