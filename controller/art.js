@@ -1,28 +1,36 @@
-var axios = require("axios");
-var search = "david allan";
+const axios = require("axios");
+
+// use this only for testing purposes
+var search = "van gogh";
 // Calling images and art information from The Met
 
 function Art(search) {
-  var query =
+  let query =
     "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=" +
     search;
   axios.get(query).then(function(response) {
     // console.log(response.data.objectIDs);
-    var artArr = response.data.objectIDs;
-    var imgArr = [];
-    var callCount = 0;
-    for (var i = 0; i < artArr.length; i++) {
-      var imgQuery =
-        "https://collectionapi.metmuseum.org/public/collection/v1/objects/" +
-        artArr[i];
-      axios.get(imgQuery).then(function(res) {
-        imgArr.push(res.data.primaryImage);
-        callCount++;
-        if (callCount === artArr.length) {
-          console.log(imgArr);
-        }
-      });
-    }
+    let artArr = response.data.objectIDs;
+    artQuery(artArr);
+  });
+}
+
+function artQuery(artArr) {
+  let imgArr = [];
+  let callCount = 0;
+  artArr.forEach(function() {
+    let i = 0;
+    let imgQuery =
+      "https://collectionapi.metmuseum.org/public/collection/v1/objects/" +
+      artArr[i];
+    axios.get(imgQuery).then(function(res) {
+      imgArr.push(res.data.primaryImage);
+      callCount++;
+      if (callCount === artArr.length) {
+        console.log(imgArr);
+      }
+    });
+    i++;
   });
 }
 
