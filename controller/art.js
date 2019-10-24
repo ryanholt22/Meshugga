@@ -1,5 +1,7 @@
 const axios = require("axios");
-const search = "van gogh";
+
+// use this only for testing purposes
+var search = "van gogh";
 // Calling images and art information from The Met
 
 function Art(search) {
@@ -16,10 +18,11 @@ function Art(search) {
 function artQuery(artArr) {
   let imgArr = [];
   let callCount = 0;
-  imgArr.forEach(function() {
+  artArr.forEach(function() {
+    let i = 0;
     let imgQuery =
       "https://collectionapi.metmuseum.org/public/collection/v1/objects/" +
-      artArr;
+      artArr[i];
     axios.get(imgQuery).then(function(res) {
       imgArr.push(res.data.primaryImage);
       callCount++;
@@ -27,6 +30,7 @@ function artQuery(artArr) {
         console.log(imgArr);
       }
     });
+    i++;
   });
 }
 
