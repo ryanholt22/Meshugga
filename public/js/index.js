@@ -92,19 +92,15 @@ document.querySelectorAll(".delete").forEach(btn => {
   btn.addEventListener("click", handleDeleteBtnClick);
 });
 
-var slideIndex = 0;
-showSlides();
+$(".carousel").carousel({
+  interval: 2000
+});
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 1500); // Change image every 2 seconds
-}
+var randomSlide = Math.floor(
+  Math.random() * $("#carouselExampleSlidesOnly .carousel-inner li").size()
+);
+
+jQuery(document).ready(function($) {
+  $("#carouselExampleSlidesOnly").carousel(randomSlide);
+  $("#carouselExampleSlidesOnly").carousel("next");
+});
