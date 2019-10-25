@@ -95,12 +95,3 @@ document.querySelectorAll(".delete").forEach(btn => {
 $(".carousel").carousel({
   interval: 2000
 });
-
-var randomSlide = Math.floor(
-  Math.random() * $("#carouselExampleSlidesOnly .carousel-inner li").size()
-);
-
-jQuery(document).ready(function($) {
-  $("#carouselExampleSlidesOnly").carousel(randomSlide);
-  $("#carouselExampleSlidesOnly").carousel("next");
-});
