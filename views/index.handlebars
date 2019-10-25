@@ -7,8 +7,12 @@
     <a class="navbar-brand" href="#"><u><i>Suggested Artist5</i></u></a>
     <a class="navbar-brand" href="#"><u><i>Suggested Artist6</i></u></a>
   </nav>
-  <button type="button" id="search-artist-button" class="btn btn-success">Search</button>
-  <input class="form-control" type="text" placeholder="Search for artist" aria-label="Search">
+  <form>
+    <div class="form-group">
+      <input class="form-control" type="text" id="artist-input" placeholder="Search for artist" aria-label="Search">
+      <button type="submit" id="search-artist-button" class="btn btn-success">Search</button>
+    </div>
+  </form>
   <div class="jumbotron" id="header">
     <h1 class="display-4">Welcome to Meshugga!</h1>
     <p class="lead">Upload some art or search a specific artist to get started!</p>
@@ -47,8 +51,9 @@
     {{#each examples}}
     <li data-id={{this.id}} class="list-group-item">
       <a href="example" {{this.id}}{{this.text}}></a>
-      <button class="btn btn-danger float-right deleteｘ"></button>
-    <li>
-      {{/each}}
+      <button class="btn btn-danger float-right deleteｘ">hi</button>
+    </li>
+    {{/each}}
   </ul>
 </div>
+<script type="text/javascript" src="/js/index.js"></script>

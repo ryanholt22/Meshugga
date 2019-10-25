@@ -1,19 +1,21 @@
 const axios = require("axios");
 
 // use this only for testing purposes
-var search = "van gogh";
+// var search = "van gogh";
 // Calling images and art information from The Met
 
-function Art(search) {
-  let query =
-    "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=" +
-    search;
-  axios.get(query).then(function(response) {
-    // console.log(response.data.objectIDs);
-    let artArr = response.data.objectIDs;
-    artQuery(artArr);
-  });
-}
+var Art = {
+  handler: function(search) {
+    let query =
+      "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=" +
+      search;
+    axios.get(query).then(function(response) {
+      // console.log(response.data.objectIDs);
+      let artArr = response.data.objectIDs;
+      artQuery(artArr);
+    });
+  }
+};
 
 function artQuery(artArr) {
   let imgArr = [];
@@ -34,4 +36,4 @@ function artQuery(artArr) {
   });
 }
 
-module.exports = Art(search);
+module.exports = Art;
