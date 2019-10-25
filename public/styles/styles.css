@@ -4,7 +4,7 @@
 
 #header {
   background-color: rgb(0, 172, 86) !important;
-  background-image: linear-gradient(rgb(136, 255, 0), rgb(0, 172, 86));
+  background-image: linear-gradient(rgb(136, 255, 0), rgb(0, 174, 86));
 }
 
 body {
@@ -117,4 +117,24 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+/* Small devices (600px and up) */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    width: 60px;
+  }
+  .navbar-brand {
+    width: 40px;
+  }
+}
+
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+  .navbar {
+    width: 80px;
+  }
+  .navbar-brand {
+    width: 60px;
+  }
 }

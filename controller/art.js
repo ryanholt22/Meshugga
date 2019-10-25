@@ -1,5 +1,4 @@
 const axios = require("axios");
-
 // use this only for testing purposes
 var search = "van gogh";
 // Calling images and art information from The Met
