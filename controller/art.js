@@ -1,9 +1,6 @@
 const axios = require("axios");
 
-// use this only for testing purposes
-// var search = "van gogh";
 // Calling images and art information from The Met
-
 var Art = {
   handler: function(search) {
     let query =
@@ -35,5 +32,7 @@ function artQuery(artArr) {
     i++;
   });
 }
+// tester
+// Art.handler("van gogh");
 
 module.exports = Art;

@@ -4,9 +4,9 @@ $(".carousel").carousel({
   interval: 2000
 });
 
-$("#search-artist-button").on("submit", function(e) {
+$("#artSubmit").on("click", function(e) {
   e.preventDefault();
-  var search = $("#artist-input")
+  var search = $("#artGalleryQuery")
     .val()
     .trim();
   Art.handler(search);
