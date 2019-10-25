@@ -39,13 +39,19 @@ body {
   text-align: center;
 }
 
+.navbar-brand {
+  margin: 15px;
+  transform: translateX(-29px) !important;
+}
+
 .navbar {
-  background-color: rgba(167, 77, 13, 0.836) !important;
+  background-color: rgba(167, 77, 13, 0.555) !important;
   position: fixed;
-  width: max-content !important;
-  border-radius: 25px;
-  border: 2px solid rgb(173, 33, 33);
+  width: 160px !important;
+  border-radius: 0 0 25px;
+  border-bottom: 2px solid rgb(173, 33, 33);
   z-index: 999;
+  height: 500px;
 }
 
 .form-control {
@@ -100,6 +106,7 @@ body {
   background-color: rgba(255, 0, 0, 0) !important;
   background-image: linear-gradient(rgb(0, 172, 86), rgb(167, 77, 13));
   margin-top: 60px;
+  height: max-content;
 }
 
 .container {
