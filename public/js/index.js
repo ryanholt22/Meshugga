@@ -91,3 +91,16 @@ submitBtnEl.addEventListener("click", handleFormSubmit);
 document.querySelectorAll(".delete").forEach(btn => {
   btn.addEventListener("click", handleDeleteBtnClick);
 });
+
+$(".carousel").carousel({
+  interval: 2000
+});
+
+var randomSlide = Math.floor(
+  Math.random() * $("#carouselExampleSlidesOnly .carousel-inner li").size()
+);
+
+jQuery(document).ready(function($) {
+  $("#carouselExampleSlidesOnly").carousel(randomSlide);
+  $("#carouselExampleSlidesOnly").carousel("next");
+});
