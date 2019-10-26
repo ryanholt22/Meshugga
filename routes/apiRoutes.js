@@ -2,14 +2,17 @@ var db = require("../models");
 
 module.exports = {
   postExampleApi: async function(req, res) {
-    const dbExample = await db.Example.create(req.body);
+    const dbExample = await db.Submission.create(req.body);
     res.json(dbExample);
   },
+
   api: function(app) {
     // Get all examples
     app.get("/api/examples", function(req, res) {
-      db.Example.findAll({}).then(function(dbExamples) {
-        res.json(dbExamples);
+      db.Submission.findAll({}).then(function(dbExamples) {
+        console.log("String here", dbExamples);
+        res.render("index", dbExamples);
+        // res.json(dbExamples);
       });
     });
 
@@ -18,7 +21,7 @@ module.exports = {
 
     // Delete an example by id
     app.delete("/api/examples/:id", function(req, res) {
-      db.Example.destroy({ where: { id: req.params.id } }).then(function(
+      db.Submission.destroy({ where: { id: req.params.id } }).then(function(
         dbExample
       ) {
         res.json(dbExample);

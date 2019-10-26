@@ -2,4 +2,9 @@ INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALU
 INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://media.mnn.com/assets/images/2010/02/baby-orangutan.jpg.1000x0_q80_crop-smart.jpg", "Orangutan", "Everyone loves me");
 INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://t2.kn3.net/taringa/B/A/6/C/1/D/mundial-2014/A58.jpg", "Chihuahua", "I am going to haunt you in your nightmares");
 INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://cdna.artstation.com/p/assets/images/images/006/639/184/large/thomas-veyrat-anglerfish-view01-3-4.jpg?1500132196", "Anglerfish", "I'm a pretty, pretty lady");
-
+INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-cat-photos-funny-cover.jpg", "Fly Cat", "I'm a sleek flying machine");
+INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://i.pinimg.com/originals/34/7a/26/347a26428f6353650447acbc5c3cadbc.jpg", "Kangaroo", "Suave");
+INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://i.pinimg.com/originals/14/e3/6d/14e36d043b53587ee018ea66f307e26f.jpg", "Owl", "Ever So Sad");
+INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpxZGhF5nwELSbbUPvj80WcjgvxLiSyyHzKbWjUIzmMVwyqp8V&s", "Llama", "What? I need braces?!");
+INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://www.telegraph.co.uk/content/dam/Travel/leadAssets/34/97/comedy-hamster_3497562a.jpg?imwidth=450", "Rodent", "Topheavy");
+INSERT INTO submission (artpiece_link, artpiece_name, artpiece_description) VALUES ("https://i.pinimg.com/originals/21/54/3a/21543a3fb441a221b2e5444c19bcc23b.jpg", "Ostrich", "You lookin' at me??");
