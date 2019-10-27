@@ -1,5 +1,4 @@
 const axios = require("axios");
-
 // Calling images and art information from The Met
 var Art = function(search) {
   let query =
