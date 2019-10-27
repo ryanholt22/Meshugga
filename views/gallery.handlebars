@@ -1,12 +1,19 @@
 <div class="container">
+    <h2>This is the Gallery...sorta</h2>
     <nav>
         <form>
             <div class="form-group">
                 <label for="theMetArtGallery"></label>
-                <input type="text" class="form-control" id="artGalleryQuery"
-                    placeholder="Enter Artist Name">
+                <input type="text" class="form-control" id="artist-find" placeholder="Enter Artist Name">
             </div>
-            <button type="submit" id="artSubmit" class="btn btn-primary">Submit</button>
+            <button type="submit" id="art-sub" class="btn btn-primary">Submit</button>
         </form>
     </nav>
+    <div>
+        <ul>
+            {{#each artImg}}
+            <li><img src="{{this}}"></li>
+            {{/each}}
+        </ul>
+    </div>
 </div>
