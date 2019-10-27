@@ -18,7 +18,7 @@ var Art = function(search) {
         item;
       //console.log(imgQuery);
       axios.get(imgQuery).then(function(response) {
-        imgArr.push(response.data.primaryImage);
+        imgArr.push(response.data.primaryImageSmall);
         callCount++;
         if (callCount === artArr.length) {
           console.log(imgArr);
