@@ -4,4 +4,4 @@ node_modules
 **/*.json
 *.json
 **/**/*.sql
-test/
+test/apiRoutes.test.js
