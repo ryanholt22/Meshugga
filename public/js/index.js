@@ -9,5 +9,4 @@ $("#artSubmit").on("click", function(e) {
   var search = $("#artGalleryQuery")
     .val()
     .trim();
-  Art.handler(search);
 });

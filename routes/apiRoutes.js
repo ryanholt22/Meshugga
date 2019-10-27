@@ -1,4 +1,5 @@
 var db = require("../models");
+var Art = require("../controller/art.js");
 
 module.exports = function(app) {
   // Get all examples
@@ -22,5 +23,10 @@ module.exports = function(app) {
     ) {
       res.json(dbExample);
     });
+  });
+
+  app.get("/api/gallery", function(req, res) {
+    var search = req.body;
+    res.send(Art.handler(search));
   });
 };
