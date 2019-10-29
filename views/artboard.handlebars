@@ -1,0 +1,17 @@
+<div class="container">
+  <h3>Getting started!</h3>
+  <h5>To get started, paste a URL below to upload art, or search for an artist at the top of the page.</h5>
+  <div id="postone" class="shadow-lg p-3 mb-5 bg-white rounded">
+    <form action="myform.cgi">
+      <button id="submit" class="btn btn-success float-right" style="color: brown; margin-left: 5px;">Submit</button>
+      <input type="url" name="fileupload" id="fileupload" style="border-radius: 5px 5px 5px; border:none;"> Enter a
+      URL to upload art!</input>
+    </form>
+  </div>
+  <br>
+</div>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-wrap="true" data-ride="carousel" data-interval="3000">
+  {{#each dbExamples}}
+  <p>{{this.id}}{{this.artpiece_name}} <img src="{{this.artpiece_link}}"> {{this.artpiece_description}}</p>
+  {{/each}}
+</div>
