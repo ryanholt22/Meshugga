@@ -16,7 +16,9 @@ $(function() {
       var artArr = data;
       console.log(artArr);
       for (var i = 0; i < artArr.length; i++) {
-        $("#imgReturn").append("<li><img src='" + artArr[i].img + "'></li>");
+        $("#imgReturn").append(
+          "<div class='grid-item'><img src='" + artArr[i].img + "'></div>"
+        );
       }
     });
   });
