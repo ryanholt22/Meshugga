@@ -10,6 +10,8 @@ $(function() {
         .val()
         .trim()
     };
+
+    $("#artist-find").val("");
     console.log(artist);
     $.post("/api/gallery", artist, data => {
       $("#imgReturn").empty();
