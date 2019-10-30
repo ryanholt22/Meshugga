@@ -2,9 +2,30 @@
   line-height: 2.5;
 }
 
+.showHide {
+  height: 4px !important;
+  width: 80px;
+  height: 50px;
+  margin: 5px;
+  transform: translateY(680px);
+  position: fixed;
+  border: 0px solid transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: rgba(0, 0, 0, 0.33);
+}
+
+* {
+  width: max-content;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 #header {
   background-color: rgb(0, 172, 86) !important;
-  background-image: linear-gradient(rgb(136, 255, 0), rgb(0, 172, 86));
+  background-image: linear-gradient(rgb(136, 255, 0), rgb(0, 174, 86));
+  width: 1518px;
 }
 
 body {
@@ -21,13 +42,11 @@ body {
 
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
-      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0), 0 0 30px #ff0000;
   }
 
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
-      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px rgb(0, 0, 0), 0 0 30px #ff0000, 0 0 40px #ff0000;
   }
 }
 
@@ -39,13 +58,19 @@ body {
   text-align: center;
 }
 
+.navbar-brand {
+  margin: 15px;
+  transform: translateX(-29px) !important;
+}
+
 .navbar {
-  background-color: rgba(167, 77, 13, 0.836) !important;
+  background-color: rgba(167, 77, 13, 0.5) !important;
   position: fixed;
-  width: max-content !important;
-  border-radius: 25px;
-  border: 2px solid rgb(173, 33, 33);
+  width: 160px !important;
+  border-radius: 0 0 25px;
+  border-bottom: 2px solid rgb(173, 33, 33);
   z-index: 999;
+  height: 435px;
 }
 
 .form-control {
@@ -100,6 +125,7 @@ body {
   background-color: rgba(255, 0, 0, 0) !important;
   background-image: linear-gradient(rgb(0, 172, 86), rgb(167, 77, 13));
   margin-top: 60px;
+  height: max-content;
 }
 
 .container {
@@ -108,6 +134,36 @@ body {
   border-top-right-radius: 40px;
 }
 
-* {
-  box-sizing: border-box;
+/* force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* ---- grid ---- */
+
+.grid {
+  background: #ddd;
+}
+
+/* clear fix */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
 }

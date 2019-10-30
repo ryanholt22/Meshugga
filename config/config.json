@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Dexter11342",
-    "database": "exampledb",
+    "password": "1",
+    "database": "meshugga1_db",
     "host": "localhost",
     "port": "3306",
     "dialect": "mysql"
