@@ -28,6 +28,23 @@
   width: 1518px;
 }
 
+#gallery {
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+  text-align: center;
+}
+
+#galleryheader {
+  transform: translateX(15px);
+  color: blue;
+  font-family: "ZCOOL XiaoWei", serif;
+}
+
+input::placeholder {
+  color: blue !important;
+  font-size: 1.2em;
+  font-family: "ZCOOL XiaoWei", serif;
+}
+
 body {
   background-color: rgb(167, 77, 13) !important;
   font-family: "Cairo", sans-serif;
