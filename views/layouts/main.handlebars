@@ -18,13 +18,28 @@
   <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
   <script type="text/javascript" src="/js/index.js"></script>
+
   <title>Home Page</title>
   <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 </head>
 
 <body>
   {{{body}}}
+
+  <script type="text/javascript">
+    var $grid = $('.grid').masonry({
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      columnWidth: '.grid-sizer'
+    });
+    // layout Masonry after each image loads
+    $grid.imagesLoaded().progress(function () {
+      $grid.masonry();
+    });
+  </script>
 </body>
 
 </html>

@@ -1,7 +1,9 @@
+//code by Kelly - inserted by chris
 module.exports = function(sequelize, DataTypes) {
-  var Example = sequelize.define("Example", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+  var Submission = sequelize.define("Submission", {
+    artpiece_link: DataTypes.STRING
+    //updatedAt: DataTypes.DATE,
+    //createdAt: DataTypes.DATE,
   });
-  return Example;
+  return Submission;
 };
